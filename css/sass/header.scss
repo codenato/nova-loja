@@ -1,0 +1,175 @@
+/**
+ * Header
+ */
+
+.header {
+    padding-top: 10px;
+    color: $white !important;
+    background: black !important;
+    @extend .helvetica-thin;
+
+    .logo {
+      float: left;
+    }
+
+    .menu-hamburger {
+      margin-top: 15px;
+      display: block;
+    }
+
+    a {
+      color: $white !important;
+
+      span {
+        @include transition(color .5s ease);
+      }
+
+      svg {
+        fill: $white;
+        @include transition(fill .5s ease);
+      }
+
+      &:hover {
+        color: $primary-color !important;
+
+        span {
+          @include transition(color .5s ease);
+        }
+
+        svg {
+          fill: $primary-color;
+        }
+      }
+    }
+
+    a.btn-white {
+      color: #000 !important;
+    }
+
+
+    .search-form {
+      @include transition(color .5s ease);
+      margin-top: 10px;
+
+      div, form {
+
+        input[type=search] {
+          color: $white;
+          border: none;
+          border-bottom: 1px solid $white;
+          @include transition(border-bottom .5s ease);
+
+          &:hover, &:active, &:focus {
+            color: $white;
+            border: none !important;
+            border-bottom: 1px solid $primary-color !important;
+            outline: 0;
+          }
+
+        }
+
+        .search-input {
+          width: 100% !important;
+          padding-right: 10px;
+        }
+
+      }
+
+      &:hover, &:active, &:focus {
+        span {
+          color: $primary-color;
+        }
+      }
+    }
+
+
+    .header-customer {
+      text-transform: uppercase;
+
+      ul {
+        list-style: none;
+
+        li {
+          @extend .text-center;
+
+          a {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+
+            .span-cart {
+              display: block;
+              font-size: 20px;
+            }
+
+            .cart-amount {
+              color: #000;
+              font-size: 15px;
+              font-weight: bold;
+
+              span {
+                background: $white;
+                padding-left: 4px;
+                padding-right: 1px;
+                margin-right: 4px;
+              }
+            }
+
+            &:hover {
+              span {
+                color: $primary-color !important;
+                background: #000;
+                @include transition(all .5s ease);
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+}
+
+.owl-controls {
+  margin-top: -28px !important;
+
+  .owl-page {
+    span {
+      background: $primary-color !important;
+    }
+  }
+}
+
+@media only screen and (min-width : 728px) {
+
+  .search-form {
+
+      .tel-top {
+        margin-right: 15px;
+      }
+
+  }
+
+  .header-customer {
+
+      ul {
+
+        li {
+
+          a {
+
+            .cart-amount {
+              margin-top: 8px;
+            }
+
+          }
+        }
+      }
+
+    }
+
+}
+
+@media only screen and (min-width : 1200px) {
+
+}

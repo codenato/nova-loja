@@ -1,0 +1,559 @@
+/**
+ * Base / Settings
+ */
+
+$primary-color: #C500AA;
+$dark-brand-primary: #462352; //very dark purple
+$primary-font: "Oswald", sans-serif;
+$white: #FFFFFF;
+
+body {
+    background: #fff;
+    color: $dark-brand-primary;
+}
+
+a {
+  color: $dark-brand-primary;
+}
+
+p {
+  border: none;
+}
+
+// adaptive images
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+// vertical spaces
+.vspace-xs,
+.vspace-sm,
+.vspace-lg {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.vspace-sm {
+    margin-bottom: 10px;
+}
+
+.vspace-lg {
+    margin-bottom: 20px;
+}
+
+// margin and paddings
+.nopadding {
+  padding: 0 !important;
+}
+
+
+// text overrides
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+// inputs overrides
+input[type=search], input[type=text], input[type=email], input[type=password], input[type=tel] {
+  @extend .helvetica-thin;
+  font-size: 18px;
+  color: $dark-brand-primary;
+  letter-spacing: 3.59px;
+  line-height: 22px;
+  background: transparent;
+  border: 1px solid $dark-brand-primary;
+  height: 45px;
+
+  &:hover, &:active, &:focus {
+    color: $dark-brand-primary;
+    background: transparent;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba($dark-brand-primary,.6);
+  }
+
+  &.obriga {
+    border-left: 1px solid red;
+  }
+
+}
+
+.input-group {
+  display: inline-table;
+  width: 100%;
+
+  div, span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+
+// btns
+.btn-default {
+  @extend .helvetica-thin;
+  color: $dark-brand-primary !important;
+  background: transparent;
+  letter-spacing: 3.59px;
+  line-height: 22px;
+  border: 1px solid $dark-brand-primary;
+  border-radius: 0px;
+  @include transition(all .5s ease);
+  padding: 5px;
+
+  &:hover, &:active {
+    color: $white !important;
+    background: $dark-brand-primary;
+    border: 1px solid $dark-brand-primary;
+  }
+}
+
+.btn-black {
+  color: $white;
+  border: 1px solid $white;
+
+  &:hover, &:active {
+    color: $primary-color;
+    background: transparent;
+    border: 1px solid $primary-color;
+  }
+}
+
+.btn-white {
+  color: #000000 !important;
+  border: 1px solid $white;
+  background: $white;
+
+  &:hover, &:active {
+    color: #000000 !important;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+  }
+}
+
+.btn-dark {
+  color: $white !important;
+  border: 1px solid $dark-brand-primary !important;
+  background: $dark-brand-primary !important;
+
+  &:hover, &:active {
+    color: $dark-brand-primary !important;
+    background: $primary-color !important;
+    border: 1px solid $primary-color !important;
+  }
+}
+
+.categories {
+  background: #E0E0E0;
+  @extend .text-center;
+  padding: 10px;
+
+  ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      margin: 2px;
+
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
+.filtros {
+  margin: 5px;
+}
+
+.board {
+  .caixa-login, .caixa-cadastro {
+    min-height: 420px;
+    background: #E0E0E0;
+    padding: 10px;
+    margin-bottom: 50px;
+    width: 100% !important;
+
+    fieldset {
+      border: none;
+
+      .botao-novo-cadastro {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.botao-commerce {
+  @extend .btn-default;
+  @extend .btn-dark;
+  background-image: none;
+  border-radius: 0px !important;
+}
+
+#CadastroAbas {
+  border: none;
+  background: none;
+
+  ul {
+    li {
+      background: none;
+
+      a {
+        @extend .helvetica-medium;
+        color: $dark-brand-primary;
+        font-size: 16px !important;
+        font-weight: normal !important;
+        background: none;
+      }
+    }
+  }
+
+}
+
+#frm2 {
+  background: #E0E0E0;
+  margin-bottom: 50px;
+  padding: 15px;
+
+  fieldset {
+    border: none;
+  }
+}
+
+.carrinho-tabs {
+  margin-top: 50px;
+
+  ol {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      background: $dark-brand-primary;
+      flex: 1 auto;
+      margin-left: 1%;
+      padding: 10px 5px;
+      float: left;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 5px;
+
+      .passo-num, .passo-desc {
+        display: none;
+      }
+
+      .passo-text {
+        color: $white;
+      }
+
+      &.active {
+        background: $primary-color;
+
+        .passo-text {
+          color: $dark-brand-primary;
+        }
+      }
+    }
+  }
+}
+
+.AvancarTopo{
+    display: none;
+}
+
+.page-checkout_cart .Seguro{
+    margin: 10px 0 0;
+    position: static;
+    text-align: right;
+}
+
+.page-checkout_cart .Seguro img{
+    position: static;
+}
+
+.page-checkout_cart .tit-total{
+    display: none;
+}
+
+.page-checkout_cart .caixa-total h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.page-checkout_cart .refresh{
+    background: url('../img/refresh.png') no-repeat center;
+    height: 24px;
+    width: 24px;
+}
+
+.page-checkout_cart .refresh img{
+    display: none;
+}
+
+.page-checkout_cart .bt-excluir{
+    background: url('../img/close.png') no-repeat center;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+.page-checkout_cart .bt-excluir img{
+    display: none;
+}
+
+.page-checkout_cart .qntd{
+    background: none;
+    height: 30px;
+    width: 40px;
+}
+
+.page-checkout_cart .qntdEstoque{
+    display: none;
+}
+
+.page-checkout_cart #tabela_carrinho td:nth-child(4) {
+    text-align: center;
+}
+
+.page-checkout_cart .caixa-produto + .container{
+    display: none;
+}
+
+.page-checkout_cart {
+  .Seguro {
+    top: 3px;
+  }
+
+  .caixa-frete {
+    margin-top: 60px;
+  }
+
+  .caixa-botoes {
+    margin-bottom: 50px;
+  }
+
+}
+
+.tablePage {
+  border: none;
+
+  tr {
+    border-top: 1px solid rgba($dark-brand-primary, .3);
+    border-bottom: 1px solid rgba($dark-brand-primary, .3);
+    float: left;
+    position: relative;
+
+    &:nth-child(1) {
+      display: none;
+    }
+
+    th {
+      border: none;
+      background: none;
+      width: 100%;
+      float: left;
+      border-bottom: none;
+      position: static;
+    }
+
+    td {
+      width: 100%;
+      float: left;
+      border-bottom: none;
+      position: static;
+
+      span {
+        margin-top: 15px;
+        display: block;
+        text-align: center;
+      }
+
+      .bt-excluir {
+        position: absolute;
+        right: 0px;
+        top: 15px;
+      }
+    }
+  }
+
+}
+
+.caixa-forma-frete {
+
+  tr {
+    display: block !important;
+
+    th {
+      width: 100%;
+      display: block;
+
+      &:nth-child(2) {
+        display: none !important;
+      }
+
+      #calculoFrete {
+        @extend .text-center;
+        width: 100%;
+
+        #cep1 {
+          width: 100px;
+        }
+
+        #cep2 {
+          width: 70px;
+        }
+
+        .botao-simular-frete {
+          @extend .text-center;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          width: 100%;
+          max-width: 300px;
+        }
+
+      }
+    }
+
+  }
+
+  #formas_envio_frete {
+    tr {
+      border: none;
+    }
+  }
+
+}
+
+.caixa-total {
+  tr {
+    display: block !important;
+    border: none !important;
+    width: 100% !important;
+
+    th {
+      &:nth-child(1), &:nth-child(3) {
+        display: none;
+      }
+
+      h3 {
+        @extend .text-center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.bt-continuar-comprando, .botao-continuar-comprando, .botao-prosseguir-compra {
+  @extend .text-center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width : 728px) {
+  .categories {
+    ul {
+
+      li {
+        width: auto;
+
+        a {
+          padding: 10px;
+        }
+      }
+
+    }
+  }
+
+  .board {
+    .caixa-login, .caixa-cadastro {
+      width: 49% !important;
+
+    }
+  }
+
+  .carrinho-tabs {
+
+    ol {
+
+      li {
+        width: 49%;
+      }
+
+    }
+
+  }
+
+  .tablePage {
+    border: none;
+
+    tr {
+      border-top: 1px solid rgba($dark-brand-primary, .3);
+      border-bottom: 1px solid rgba($dark-brand-primary, .3);
+      float: none;
+
+      &:nth-child(1) {
+        display: table-row;
+      }
+
+      th {
+        width: auto !important;
+        float: none;
+        position: relative;
+      }
+
+      td {
+        width: auto !important;
+        float: none;
+        border-bottom: none;
+        position: relative;
+        display: table-cell;
+
+        .bt-excluir {
+          position: relative;
+        }
+      }
+    }
+
+  }
+
+  .caixa-total {
+    th {
+      width: 100% !important;
+      display: block;
+    }
+  }
+
+  .bt-continuar-comprando, .botao-continuar-comprando, .botao-prosseguir-compra {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .carrinho-tabs {
+
+    ol {
+
+      li {
+        width: 24%;
+      }
+
+    }
+
+  }
+}

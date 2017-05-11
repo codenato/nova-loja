@@ -1,0 +1,148 @@
+<div class="row">
+  <div class="col-xs-12" itemscope itemtype="http://schema.org/Product">
+    <span id="span_erro_carrinho"></span>
+    <div id="loading-product-container">
+      <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+         {% element 'snippets/breadcrumb' %}
+          <!-- <span class="product&#45;id"> -->
+            <!--   {{ Translation('codigo') }}: -->
+            <!--   <strong> -->
+              <!--     {{ product.id }} -->
+              <!--   </strong> -->
+            <!-- </span> -->
+          <h1>{{ product.name }}</h3>
+      </div>
+    </div>
+    <div class="row product-wrapper">
+      <div class="product-labels col-xs-12">
+        {% if product.additional_button %}
+          <span class="promo-label sale">SALE</span>
+        {% endif %}
+        {% if product.free_shipping %}
+          <span class="promo-label free-shipping ">FRETE GR&Aacute;TIS</span>
+        {% endif %}
+        {% if product.new %}
+          <span class="promo-label new ">LAN&Ccedil;AMENTO</span>
+        {% endif %}
+      </div>
+
+      <div class="col-md-6">
+        <div id="visualBlock" class="product-gallery">
+          {{ productHelper.gallery() }}
+        </div>
+        <div class="product-social">
+          {{ productHelper.social() }}
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="col-xs-12 product-info">
+          {% element 'product/rating' %}
+          <p class="product-details">
+            {{ productHelper.details() }}
+            {{ productHelper.icons() }}
+          </p>
+          {{ productHelper.bonus() }}
+          <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+            {{ productHelper.pricing() }}
+            {{ productHelper.variants() }}
+            {{ product.additional_information }}
+            {{ productHelper.gifts() }}
+            {{ productHelper.form() }}
+            <div data-app="product.buy-button" id="" class="remove-bg" align="left">
+              <button id="button-buy" class="btn-default btn-dark" data-tray-tst="button_buy_product" type="submit">
+                COMPRAR
+              </button>
+              <div id="loading_btn" align="left" style="display:none">
+                  <img src="https://images1.tcdn.com.br/assets/store/img/loading.gif">Calculando ...
+              </div>
+            </div>
+            {{ productHelper.wishlist() }}
+            {{ productHelper.shipping() }}
+          </form>
+          <p class="product-message">
+            {{ product.additional_message }}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-xs-12 product-tabs">
+        <div id="ProdBlock" class="col-xs-12 nopadding">
+          <div id="loading-tab-container">
+            <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+          </div>
+          <a name="formaPagto"></a>
+          <div class="abasProduto col-xs-12 nopadding">
+            <ul>
+              {% for key, tab in productTabs %}
+              {% if tab.container_id %}
+              <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div id="descricao" class="prodBox">
+            <div class="board">
+              <div class="board_htm description">
+                {{ product.description ? product.description : product.description_small }}
+              </div>
+            </div>
+          </div>
+
+          <div id="itensInclusos" class="prodBox">
+            <div class="board">
+              {{ product.included_items }}
+            </div>
+          </div>
+
+          <div id="coments" class="prodBox">
+            <div class="board">
+              {% element 'product/comments' %}
+            </div>
+          </div>
+
+          <div id="caracteristicas" class="prodBox">
+            <div class='board'>
+              {% element 'product/properties' %}
+            </div>
+          </div>
+
+          {{ productTabs.custom.content }}
+          {{ productTabs.downloads.content }}
+
+          <div id="garantia" class="prodBox">
+            <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+          </div>
+          <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;" ></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  {{ productHelper.bundle() }}
+
+  {% if product.related_products %}
+  <div class="col-xs-12">
+    <h1>Produtos Relacionados</h1>
+    <div class="row">
+      {% for related in product.related_products %}
+      <div class="col-sm-6 col-md-4 product">
+        {% element 'snippets/product' {"product": related} %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+
+</div>
+

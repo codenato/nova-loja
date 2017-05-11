@@ -1,0 +1,44 @@
+<ul class="hidden-xs col-xs-12 col-sm-5 menu-hamburger-fire">
+  <li>
+    <a href="{{ links.account }}">Minha Conta</a>
+    <span class="tray-hide" data-logged-user="false">
+      <a class="btn-default btn-black" href="{{ links.login }}">Login</a>
+    </span>
+    <span class="tray-hide" data-logged-user="true">
+      <a class="btn-default btn-black" href="javascript:void(0)">Ol&aacute;, <span data-customer="name">Dudu Nato</span></a>
+    </span>
+  </li>
+</ul>
+
+<ul class="hidden-xs col-xs-12 col-sm-5 menu-hamburger-fire">
+  <li>
+    <a href="{{ links.orders }}">Meus Pedidos</a>
+    <span class="tray-hide" data-logged-user="false">
+      <a class="btn-default btn-white" href="{{ links.register }}">Cadastre-se</a>
+    </span>
+    <span class="tray-hide" data-logged-user="true">
+      <a class="btn-default btn-black" href="{{ links.logout }}">Sair</a>
+    </span>
+  </li>
+</ul>
+
+<ul class="col-xs-6 col-sm-2">
+  <li>
+    <a  href="{{ links.cart }}">
+      <span class="span-cart cart-amount" ><span data-cart="amount"></span></span>
+      <span class="span-cart glyphicon glyphicon-shopping-cart"></span>
+    </a>
+  </li>
+</ul>
+
+<ul class="hidden-sm hidden-md hidden-lg col-xs-6 text-right">
+  <li>
+    <a class="menu-hamburger" href="javascript:void(0)">
+      <svg class="color-change" width="26" height="19" viewBox="0 0 26 17" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <path d="M0 1.545C0 .692.695 0 1.55 0h22.9C25.308 0 26 .686 26 1.545c0 .854-.695 1.546-1.55 1.546H1.55C.692 3.09 0 2.406 0 1.546zM0 8.5c0-.854.695-1.545 1.55-1.545h22.9c.857 0 1.55.686 1.55 1.545 0 .854-.695 1.545-1.55 1.545H1.55C.692 10.045 0 9.36 0 8.5zm0 6.955c0-.854.695-1.546 1.55-1.546h22.9c.857 0 1.55.685 1.55 1.545 0 .853-.695 1.545-1.55 1.545H1.55C.692 17 0 16.314 0 15.455z"/>
+          </g>
+        </svg>
+      </a>
+  </li>
+</ul>

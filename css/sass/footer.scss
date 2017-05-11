@@ -1,0 +1,118 @@
+/**
+ * Footer
+ */
+
+.info-store {
+  background: #E0E0E0;
+  padding: 30px 0px;
+
+  div {
+    @extend .text-center;
+
+    a {
+      h4 {
+        color: $dark-brand-primary;
+        font-size: 16px;
+      }
+
+      svg {
+        fill: $dark-brand-primary;
+      }
+
+      &:hover, &:active, &:focus {
+        h4 {
+          color: $primary-color;
+        }
+
+        svg {
+          fill: $primary-color;
+        }
+      }
+    }
+
+
+    .btn-default {
+      height: 45px;
+      color: $white !important;
+    }
+
+    form {
+      width: 100%;
+      display: inline-table;
+      margin-top: 20px;
+
+      input {
+        width: 67%;
+      }
+
+      input, button {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+
+}
+
+.footer {
+    padding-top: 30px;
+    background-color: #000 !important;
+    color: $white;
+
+    ul {
+      list-style: none;
+      padding-left: 10px;
+
+      .li-side {
+        float: left;
+      }
+
+      .social-link {
+        float: left;
+        margin: 0px 10px;
+      }
+
+    }
+
+    a {
+      color: $white;
+      @extend .helvetica-thin;
+      font-size: 12px;
+
+      &:hover, &:focus, &:active {
+        color: $primary-color !important;
+
+        svg {
+          fill: $primary-color;
+        }
+      }
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    .footer-title {
+      font-weight: bold;
+    }
+
+    .copyright {
+      margin: 30px 0px;
+      @extend .helvetica-ultra-light;
+      font-size: 12px;
+      color: $white;
+      opacity: 0.7;
+
+      .address {
+        @extend .helvetica-ultra-light;
+        color: $white;
+        text-transform: none;
+        text-align: left !important;
+        padding: 0px;
+      }
+
+
+    }
+
+
+}
